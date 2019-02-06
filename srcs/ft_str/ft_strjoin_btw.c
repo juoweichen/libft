@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_btw.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juochen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,19 +12,20 @@
 
 #include "../../includes/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_btw(char const *s1, char const *s2, char btw)
 {
 	char	*ns;
 	int		i;
 	int		j;
 
-	ns = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	ns = ft_strnew(ft_strlen(s1) + 1 + ft_strlen(s2));
 	if (!ns)
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[j])
 		ns[i++] = s1[j++];
+	ns[i++] = btw;
 	j = 0;
 	while (s2[j])
 		ns[i++] = s2[j++];

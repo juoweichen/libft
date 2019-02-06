@@ -17,7 +17,7 @@ HEADER = -I /includes
 W_FLAG = -Wall -Werror -Wextra
 
 SRC_DIR = srcs
-SRCS =	$(wildcard $(SRC_DIR)/dictionary/*.c)
+SRCS =	$(wildcard $(SRC_DIR)/dict/*.c)
 SRCS += $(wildcard $(SRC_DIR)/ft_int/*.c)
 SRCS += $(wildcard $(SRC_DIR)/ft_is/*.c)
 SRCS += $(wildcard $(SRC_DIR)/ft_lst/*.c)
@@ -27,6 +27,7 @@ SRCS += $(wildcard $(SRC_DIR)/ft_printf/*.c)
 SRCS += $(wildcard $(SRC_DIR)/ft_put/*.c)
 SRCS += $(wildcard $(SRC_DIR)/ft_str/*.c)
 SRCS += $(wildcard $(SRC_DIR)/get_next_line/*.c)
+SRCS += $(wildcard $(SRC_DIR)/ft_dlst/*.c)
 SRCS_OBJ = $(SRCS:.c=.o)
 
 OBJS = $(notdir $(SRCS_OBJ))

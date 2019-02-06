@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_dlstdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juochen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 18:05:40 by juochen           #+#    #+#             */
-/*   Updated: 2018/02/28 20:46:11 by juochen          ###   ########.fr       */
+/*   Created: 2018/02/24 21:46:30 by juochen           #+#    #+#             */
+/*   Updated: 2018/02/28 11:35:16 by juochen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_dlstdelone(t_dlist **alst, void (*del)(void *, size_t))
 {
-	char	*ns;
-	int		i;
-	int		j;
-
-	ns = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!ns)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[j])
-		ns[i++] = s1[j++];
-	j = 0;
-	while (s2[j])
-		ns[i++] = s2[j++];
-	return (ns);
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

@@ -15,15 +15,13 @@
 void	ft_mstrdel_norows(char ***mstr)
 {
 	int count;
-	int i;
 
 	if (mstr == NULL)
 		return ;
 	count = 0;
-	while (*mstr[count])
+	while ((*mstr)[count] != NULL)
 		count++;
-	i = 0;
-	while (i < count)
-		ft_strdel(&(*mstr)[i++]);
-	ft_memdel((void **)mstr);
+	while (--count >= 0)
+		free((*mstr)[count]);
+	free(*mstr);
 }

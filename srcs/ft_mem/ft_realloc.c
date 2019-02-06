@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juochen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 18:05:40 by juochen           #+#    #+#             */
-/*   Updated: 2018/02/28 20:46:11 by juochen          ###   ########.fr       */
+/*   Created: 2018/02/22 13:34:21 by juochen           #+#    #+#             */
+/*   Updated: 2018/02/28 17:36:54 by juochen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void		*ft_realloc(void *ptr, size_t size)
 {
-	char	*ns;
-	int		i;
-	int		j;
+	void	*mem;
+	size_t	ptrlen;
 
-	ns = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!ns)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[j])
-		ns[i++] = s1[j++];
-	j = 0;
-	while (s2[j])
-		ns[i++] = s2[j++];
-	return (ns);
+	if (ptr != NULL)
+	{
+		ptrlen = ft_strlen((char *)ptr);
+		if (size < ptrlen)
+			size = ptrlen;
+		mem = ft_memalloc(size);
+		ft_memcpy(mem, ptr, ptrlen);
+		ft_memdel(&ptr);
+	}
+	else
+		mem = ft_memalloc(size);
+	ptr = mem;
+	return (ptr);
 }

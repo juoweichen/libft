@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dictionary.h                                       :+:      :+:    :+:   */
+/*   dict.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juochen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DICTIONARY_H
-# define DICTIONARY_H
+#ifndef DICT_H
+# define DICT_H
 
 # define HASHSIZE 1001
 # define HASHNUMBER 31
@@ -30,7 +30,7 @@ unsigned			dict_hash(char *s);
 t_dict				*dict_find(t_dict **dict, char *s);
 void				dict_free_elem(t_dict **elem);
 /*
-**	dictionary.c
+**	dict.c
 */
 t_dict				**dict_create();
 int					dict_add(t_dict **dict, char *key, void *value,

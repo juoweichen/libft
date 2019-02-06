@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_dlstmap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juochen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 18:05:40 by juochen           #+#    #+#             */
-/*   Updated: 2018/02/28 20:46:11 by juochen          ###   ########.fr       */
+/*   Created: 2018/02/25 14:30:27 by juochen           #+#    #+#             */
+/*   Updated: 2018/02/25 14:48:44 by juochen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_dlist	*ft_dlstmap(t_dlist *lst, t_dlist *(*f)(t_dlist *elem))
 {
-	char	*ns;
-	int		i;
-	int		j;
+	t_dlist *res;
 
-	ns = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (!ns)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[j])
-		ns[i++] = s1[j++];
-	j = 0;
-	while (s2[j])
-		ns[i++] = s2[j++];
-	return (ns);
+	if (lst)
+	{
+		res = f(lst);
+		res->next = ft_dlstmap(lst->next, f);
+		return (res);
+	}
+	return (NULL);
 }
