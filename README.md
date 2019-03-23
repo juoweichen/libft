@@ -1,5 +1,4 @@
 # libft
-my libft
 This is the library for 42 C project
 
 include:
