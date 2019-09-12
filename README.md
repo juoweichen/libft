@@ -22,10 +22,9 @@ Because 42 ban most of C library, if you want to make your life easier, you bett
 ```
 ft_printf("^BOLD_RED==Don't panic!==\n");
 ```
-output:<br>
-```
-<span style="color:Red;"><b>==Don't panic!==</b></span><br>
-```
+output:
+![image of github please fix color rendering](https://github.com/pootitan/libft/blob/master/Don't_panic.png)
+
 For more color option, check out /include/ft_printf.h
 4. Containers<br>
     -> dictionary<br>
