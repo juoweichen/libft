@@ -18,15 +18,14 @@ Because 42 ban most of C library, if you want to make your life easier, you bett
 3. ft_printf<br>
     ft_printf: as good as printf!<br>
     ft_dprintf: output to documents<br>
-<br>
     Need some color?
-    ```
-    ft_printf("^BOLD_RED==Don't panic!==\n");
-    ```
-    output:
-    <p style="color:Red;"><b>==Don't panic!==</b></p>
-    
-    For more color option, check out /include/ft_printf.h
+```
+ft_printf("^BOLD_RED==Don't panic!==\n");
+```
+output:
+<p style="color:Red;"><b>==Don't panic!==</b></p><br>
+For more color option, check out /include/ft_printf.h
+
 4. Containers<br>
     -> dictionary<br>
     -> stack<br>
