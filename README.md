@@ -41,7 +41,8 @@ Link to libft.a in the compiler
 ## Add new lib to libft
 1. Create a new dir in srcs/
 2. Create a header in includes/
-3. Add src path to Makefile
+3. Update libft header 
+4. Add src path to Makefile
 ```
 SRCS += $(wildcard $(SRC_DIR)/<NEW_DIR_NAME>/*.c)
 ```
