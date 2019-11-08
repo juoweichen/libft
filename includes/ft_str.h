@@ -30,7 +30,7 @@ char		*ft_strcat(char *s1, const char *s2);
 char		*ft_strncat(char *s1, const char *s2, size_t n);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 /*
-**	find charactor in string
+**	find character in string
 */
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
@@ -76,6 +76,7 @@ char		*ft_strsub(char const *s, unsigned int start, size_t len);
 **  trim space in string
 */
 char		*ft_strtrim(char const *s);
+char		*ft_strctrim(char const *s, char c);
 /*
 **	string split
 */
