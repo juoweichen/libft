@@ -63,5 +63,5 @@ void		 *qpeek(t_queue *queue)
 
 int			qis_empty(t_queue *queue)
 {
-	return (queue->first == NULL);
+	return (queue == NULL || queue->first == NULL);
 }
